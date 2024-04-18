@@ -1,7 +1,7 @@
 "use client";
 
 import { useEffect } from "react";
-import useStore from "@/store/store";
+import useStore from "../store";
 
 import type { MouseEventHandler } from "react";
 
@@ -93,6 +93,7 @@ const Subscribe = () => {
 
   return (
     <button
+      className="bg-red-500"
       type="button"
       onClick={subscribeButtonOnClick}
       disabled={isSubscribed}

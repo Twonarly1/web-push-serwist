@@ -1,17 +1,15 @@
 "use client";
-import useStore from "@/store/store";
+import useStore from "../store";
 
 import type { MouseEventHandler } from "react";
 
-const SendNotification = () => {
+const Notification = () => {
   const { isSubscribed, subscription } = useStore(
     ({ isSubscribed, subscription }) => ({
       isSubscribed,
       subscription,
     })
   );
-
-  console.log(isSubscribed);
 
   const sendNotificationButtonOnClick: MouseEventHandler<
     HTMLButtonElement
@@ -71,4 +69,4 @@ const SendNotification = () => {
   );
 };
 
-export default SendNotification;
+export default Notification;

@@ -1,6 +1,6 @@
 "use client";
 
-import useStore from "@/store/store";
+import useStore from "../store";
 
 import type { MouseEventHandler } from "react";
 

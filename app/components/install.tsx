@@ -1,7 +1,7 @@
 "use client";
 
-import useStore from "@/store/store";
 import { useState, useEffect } from "react";
+import useStore from "../store";
 
 interface BeforeInstallPromptEvent extends Event {
   readonly platforms: Array<string>;
@@ -14,8 +14,6 @@ interface BeforeInstallPromptEvent extends Event {
 
 const Install = () => {
   const [installPrompt, setInstallPrompt] = useState<Event | null>(null);
-
-  console.log("HERE", installPrompt);
 
   const { setIsInstalled } = useStore(({ setIsInstalled }) => ({
     setIsInstalled,

@@ -1,9 +1,4 @@
-import {
-  Install,
-  SendNotification,
-  Subscribe,
-  Unsubscribe,
-} from "@/components";
+import { Install, Notification, Subscribe, Unsubscribe } from "./components";
 
 import type { Metadata } from "next";
 
@@ -19,7 +14,7 @@ const HomePage = () => {
       <Install />
       <Subscribe />
       <Unsubscribe />
-      <SendNotification />
+      <Notification />
     </>
   );
 };

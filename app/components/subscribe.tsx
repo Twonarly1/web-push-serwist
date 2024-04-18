@@ -93,7 +93,6 @@ const Subscribe = () => {
 
   return (
     <button
-      className="bg-red-500"
       type="button"
       onClick={subscribeButtonOnClick}
       disabled={isSubscribed}

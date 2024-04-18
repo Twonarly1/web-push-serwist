@@ -1,5 +1,5 @@
 import { NextRequest, NextResponse } from "next/server";
-import webPush, { PushSubscription } from "web-push";
+import webPush from "web-push";
 
 webPush.setVapidDetails(
   `mailto:${!process.env.WEB_PUSH_EMAIL}`,
@@ -27,22 +27,6 @@ export const POST = async (req: NextRequest) => {
 
   console.log("Received subscription:", subscription);
 
-  // interface NotificationOptions {
-  //   actions?: NotificationAction[];
-  //   badge?: string;
-  //   body?: string;
-  //   data?: any;
-  //   dir?: NotificationDirection;
-  //   icon?: string;
-  //   image?: string;
-  //   lang?: string;
-  //   renotify?: boolean;
-  //   requireInteraction?: boolean;
-  //   silent?: boolean | null;
-  //   tag?: string;
-  //   timestamp?: EpochTimeStamp;
-  //   vibrate?: VibratePattern;
-  // }
   const payload = JSON.stringify({
     title: "WebPush Notification!",
     body: "Hello World",
@@ -61,3 +45,20 @@ export const POST = async (req: NextRequest) => {
 
   return NextResponse.json({ message: "success" });
 };
+
+// interface NotificationOptions {
+//   actions?: NotificationAction[];
+//   badge?: string;
+//   body?: string;
+//   data?: any;
+//   dir?: NotificationDirection;
+//   icon?: string;
+//   image?: string;
+//   lang?: string;
+//   renotify?: boolean;
+//   requireInteraction?: boolean;
+//   silent?: boolean | null;
+//   tag?: string;
+//   timestamp?: EpochTimeStamp;
+//   vibrate?: VibratePattern;
+// }

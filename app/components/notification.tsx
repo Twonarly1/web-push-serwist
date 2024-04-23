@@ -11,8 +11,6 @@ const Notification = () => {
     })
   );
 
-  const badge = navigator.setAppBadge();
-
   const sendNotificationButtonOnClick: MouseEventHandler<
     HTMLButtonElement
   > = async (event) => {

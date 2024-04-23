@@ -44,7 +44,7 @@ const hourNoticationOptions: NotificationOptions = {
   icon: "/icons/timer-60_72x72.png", // 192x192
   //   icon: "/icons/android-chrome-192x192.png", // 192x192
   badge: "/icons/timer-60_72x72.png", // 72x72
-  image: "/icons/android-chrome-192x192.png", // 1440x720
+  // image: "/icons/android-chrome-192x192.png", // 1440x720
   data,
   actions,
 };
@@ -54,7 +54,7 @@ const halfHourNoticationOptions: NotificationOptions = {
   icon: "/icons/timer-30_72x72.png", // 192x192
   //   icon: "/icons/android-chrome-192x192.png", // 192x192
   badge: "/icons/timer-30_72x72.png", // 72x72
-  image: "/icons/android-chrome-192x192.png", // 1440x720
+  // image: "/icons/android-chrome-192x192.png", // 1440x720
   data,
   actions,
 };
@@ -64,7 +64,7 @@ const quarterHourNoticationOptions: NotificationOptions = {
   icon: "/icons/timer-15_72x72.png", // 192x192
   //   icon: "/icons/android-chrome-192x192.png", // 192x192
   badge: "/icons/timer-15_72x72.png", // 72x72
-  image: "/icons/android-chrome-192x192.png", // 1440x720
+  // image: "/icons/android-chrome-192x192.png", // 1440x720
   data,
   actions,
 };
@@ -74,7 +74,7 @@ const eventConfirmationOptions: NotificationOptions = {
   icon: "/icons/timer-15_72x72.png", // 192x192,
   //   icon: "/icons/android-chrome-192x192.png", // 192x192
   badge: "/icons/timer-15_72x72.png", // 72x72
-  image: "/icons/android-chrome-192x192.png", // 1440x720
+  // image: "/icons/android-chrome-192x192.png", // 1440x720
   data: {
     options: [
       {

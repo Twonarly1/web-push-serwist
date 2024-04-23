@@ -2,6 +2,8 @@ import { shallow } from "zustand/shallow";
 import { createWithEqualityFn } from "zustand/traditional";
 
 interface TimerStoreState {
+  installPrompt: Event | null;
+  setInstallPrompt: (installPrompt: Event | null) => void;
   installed: boolean;
   setIsInstalled: (installed: boolean) => void;
   isSubscribed: boolean;
@@ -14,6 +16,8 @@ interface TimerStoreState {
 
 const useStore = createWithEqualityFn<TimerStoreState>()(
   (set) => ({
+    installPrompt: null,
+    setInstallPrompt: (installPrompt) => set({ installPrompt }),
     installed: false,
     setIsInstalled: (installed) => set({ installed }),
     isSubscribed: false,

@@ -1,3 +1,9 @@
+import {
+  hourPayload,
+  halfHourPayload,
+  quarterHourPayload,
+  eventConfirmationPayload,
+} from "@/lib/payloads";
 import { NextRequest, NextResponse } from "next/server";
 import webPush from "web-push";
 
@@ -27,21 +33,7 @@ export const POST = async (req: NextRequest) => {
 
   console.log("Received subscription:", subscription);
 
-  const payload = JSON.stringify({
-    title: "WebPush Notification!",
-    body: "Hello World",
-    icon: "/icons/android-chrome-192x192.png",
-    actions: [
-      {
-        action: "open_url",
-        title: "Open Website",
-        icon: "/icons/favicon-16x16.png",
-      },
-      { action: "dismiss", title: "Dismiss", icon: "/icons/favicon-16x16.png" },
-    ],
-  });
-
-  webPush.sendNotification(subscription, payload);
+  webPush.sendNotification(subscription, eventConfirmationPayload);
 
   return NextResponse.json({ message: "success" });
 };

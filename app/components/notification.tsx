@@ -30,6 +30,7 @@ const Notification = () => {
         body: JSON.stringify({
           subscription,
         }),
+
         signal: AbortSignal.timeout(10000),
       });
       alert("Notification sent!");

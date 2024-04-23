@@ -1,3 +1,59 @@
+// "use client";
+
+// import { useState, useEffect } from "react";
+// import useStore from "../store";
+// import { useRouter } from "next/navigation";
+
+// interface BeforeInstallPromptEvent extends Event {
+//   readonly platforms: Array<string>;
+//   readonly userChoice: Promise<{
+//     outcome: "accepted" | "dismissed";
+//     platform: string;
+//   }>;
+//   prompt(): Promise<void>;
+// }
+
+// const Install = () => {
+//   const router = useRouter();
+//   const { installed, installPrompt, setInstallPrompt } = useStore(
+//     ({ installed, installPrompt, setInstallPrompt }) => ({
+//       installed,
+//       installPrompt,
+//       setInstallPrompt,
+//     })
+//   );
+
+//   console.log("installed", installed);
+
+//   useEffect(() => {
+//     const handleBeforeInstallPrompt = (event: Event) => {
+//       event.preventDefault();
+//       setInstallPrompt(event);
+//     };
+
+//     window.addEventListener("beforeinstallprompt", handleBeforeInstallPrompt);
+
+//     return () => {
+//       window.removeEventListener(
+//         "beforeinstallprompt",
+//         handleBeforeInstallPrompt
+//       );
+//     };
+//   }, []);
+
+//   useEffect(() => {
+//     if (!installed && installPrompt) {
+//       router.push("/install");
+//     }
+//   }, [installed, installPrompt]);
+
+//   if (installed) return null;
+
+//   return null;
+// };
+
+// export default Install;
+
 "use client";
 
 import { useState, useEffect } from "react";

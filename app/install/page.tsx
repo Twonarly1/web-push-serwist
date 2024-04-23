@@ -40,10 +40,6 @@ const Install = () => {
   //   };
   // }, []);
 
-  useEffect(() => {
-    console.log("installPrompt", installPrompt);
-  }, [installPrompt]);
-
   const handleInstallClick = () => {
     if (installPrompt) {
       const promptEvent = installPrompt as BeforeInstallPromptEvent;

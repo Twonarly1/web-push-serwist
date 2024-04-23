@@ -33,7 +33,9 @@ export const POST = async (req: NextRequest) => {
 
   console.log("Received subscription:", subscription);
 
-  webPush.sendNotification(subscription, hourPayload);
+  webPush.sendNotification(subscription, hourPayload, {
+    urgency: "high",
+  });
 
   return NextResponse.json({ message: "success" });
 };

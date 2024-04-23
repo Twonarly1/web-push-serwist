@@ -22,7 +22,7 @@ const Notification = () => {
     }
 
     try {
-      await fetch("https://web-push-serwist.vercel.app/api/notification", {
+      await fetch("http://localhost:3000/api/notification", {
         method: "POST",
         headers: {
           "Content-type": "application/json",
@@ -30,10 +30,8 @@ const Notification = () => {
         body: JSON.stringify({
           subscription,
         }),
-
-        signal: AbortSignal.timeout(10000),
       });
-      alert("Notification sent!");
+      console.log("Notification sent!");
     } catch (err) {
       if (err instanceof Error) {
         if (err.name === "TimeoutError") {
@@ -51,7 +49,6 @@ const Notification = () => {
       } else {
         console.error(err);
       }
-      alert("An error happened.");
     }
   };
 

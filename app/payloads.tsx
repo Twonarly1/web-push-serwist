@@ -21,60 +21,62 @@ interface NotificationOptions {
   vibrate?: VibratePattern;
 }
 
-const actions: NotificationAction[] = [
+const data = {
+  options: [
+    {
+      action: "open_url",
+      url: "https://google.com",
+    },
+    {
+      action: "dismiss",
+    },
+  ],
+};
+const actions = [
   {
     action: "open_url",
     title: "Open Website",
   },
-  { action: "dismiss", title: "Dismiss" },
-];
-
-const data = {
-  options: {
-    action: "open_url",
-    // open url to /notifcation/user_id
-    url: "https://google.com",
+  {
+    action: "dismiss",
+    title: "Dismiss",
   },
-};
-
-// badges are platform-specific: Chrome/Android only
+];
+// badge --> Chrome/Android only: 72x72 PNG
+const badge = "/icons/maskable-icon-72.png";
+// icon --> Android and Desktop only: 192x192 PNG
+// image --> Android and Windows only: aspect ratio 2:1, 1440x720, maxWidth: 2000, minWidth: 300: JPG
 
 const hourNoticationOptions: NotificationOptions = {
   body: "Your appointment is coming up in 1 hour!",
-  icon: "/icons/timer-60_72x72.png", // 192x192
-  //   icon: "/icons/android-chrome-192x192.png", // 192x192
-  badge: "/icons/timer-60_72x72.png", // 72x72
-  // image: "/icons/android-chrome-192x192.png", // 1440x720
+  icon: "/icons/timer-60_192.png",
+  badge,
   data,
   actions,
+  // tag: "hour",
 };
 
 const halfHourNoticationOptions: NotificationOptions = {
   body: "Your appointment is coming up in 30 minutes!",
-  icon: "/icons/timer-30_72x72.png", // 192x192
-  //   icon: "/icons/android-chrome-192x192.png", // 192x192
-  badge: "/icons/timer-30_72x72.png", // 72x72
-  // image: "/icons/android-chrome-192x192.png", // 1440x720
+  icon: "/icons/timer-30_192.png",
+  badge,
   data,
   actions,
+  // tag: "half-hour",
 };
 
 const quarterHourNoticationOptions: NotificationOptions = {
   body: "Your appointment is coming up in 15 minutes!",
-  icon: "/icons/timer-15_72x72.png", // 192x192
-  //   icon: "/icons/android-chrome-192x192.png", // 192x192
-  badge: "/icons/timer-15_72x72.png", // 72x72
-  // image: "/icons/android-chrome-192x192.png", // 1440x720
+  icon: "/icons/timer-15_192.png",
+  badge,
   data,
   actions,
+  // tag: "quarter-hour",
 };
 
 const eventConfirmationOptions: NotificationOptions = {
   body: "Complete your appointment?",
-  icon: "/icons/timer-15_72x72.png", // 192x192,
-  //   icon: "/icons/android-chrome-192x192.png", // 192x192
-  badge: "/icons/timer-15_72x72.png", // 72x72
-  // image: "/icons/android-chrome-192x192.png", // 1440x720
+  badge,
   data: {
     options: [
       {

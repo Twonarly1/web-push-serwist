@@ -5,7 +5,7 @@
   "orientation": "portrait",
   "theme_color": "#FFFFFF",
   "background_color": "#FFFFFF",
-  "start_url": "/",
+  "start_url": "https://web-push-serwist.vercel.app/",
   "icons": [
     {
       "src": "/icons/icon-16.png",

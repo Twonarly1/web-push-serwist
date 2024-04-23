@@ -1,41 +1,39 @@
-"use client";
-import { useRouter } from "next/navigation";
-// import { redirect } from "next/navigation";
+import { redirect } from "next/navigation";
 import { Notification, Subscribe, Unsubscribe } from "./components";
-// import { cookies } from "next/headers";
+import { cookies } from "next/headers";
 
-// import type { Metadata } from "next";
-// import { revalidatePath } from "next/cache";
+import type { Metadata } from "next";
 
-// export const metadata: Metadata = {
-//   title: "Home",
-// };
+export const metadata: Metadata = {
+  title: "Home",
+};
 
 const HomePage = () => {
-  const router = useRouter();
-
+  let pwaInstalled = cookies().get("pwaInstalled");
   // This is all so facked.
-  let isInstalled = localStorage.getItem("pwaInstalled") === "1" || false;
+  let isInstalled = pwaInstalled?.value === "1" || false;
+
+  // let isInstalled = localStorage.getItem("pwaInstalled") === "1" || false;
 
   if (window.matchMedia("(display-mode: standalone)").matches) {
     // User is currently navigating on the PWA so yes it's installed
-    localStorage.setItem("pwaInstalled", "1");
+    cookies().set("pwaInstalled", "1");
     isInstalled = true;
   } else {
     //User is navigating in browser
     window.addEventListener("beforeinstallprompt", () => {
-      localStorage.setItem("pwaInstalled", "0");
+      cookies().set("pwaInstalled", "0");
       isInstalled = false;
       //User can get an installation prompt meaning the app is not installed
     });
     window.addEventListener("onappinstalled", () => {
-      localStorage.setItem("pwaInstalled", "1");
+      cookies().set("pwaInstalled", "1");
       isInstalled = true;
     });
   }
 
   if (!isInstalled) {
-    router.push("/install");
+    redirect("/install");
   }
 
   return (

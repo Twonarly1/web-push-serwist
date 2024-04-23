@@ -1,3 +1,26 @@
+interface NotificationAction {
+  action: string;
+  icon?: string;
+  title: string;
+}
+
+interface NotificationOptions {
+  actions?: NotificationAction[];
+  badge?: string;
+  body?: string;
+  data?: any;
+  dir?: NotificationDirection;
+  icon?: string;
+  image?: string;
+  lang?: string;
+  renotify?: boolean;
+  requireInteraction?: boolean;
+  silent?: boolean | null;
+  tag?: string;
+  timestamp?: EpochTimeStamp;
+  vibrate?: VibratePattern;
+}
+
 const actions: NotificationAction[] = [
   {
     action: "open_url",
@@ -48,7 +71,7 @@ const quarterHourNoticationOptions: NotificationOptions = {
 
 const eventConfirmationOptions: NotificationOptions = {
   body: "Complete your appointment?",
-  icon: "/icons/timer-15_72x72.png", // 192x192
+  icon: "/icons/timer-15_72x72.png", // 192x192,
   //   icon: "/icons/android-chrome-192x192.png", // 192x192
   badge: "/icons/timer-15_72x72.png", // 72x72
   image: "/icons/android-chrome-192x192.png", // 1440x720

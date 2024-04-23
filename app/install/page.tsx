@@ -3,6 +3,7 @@
 import { useState, useEffect } from "react";
 
 import { useRouter } from "next/navigation";
+import { addCookies } from "@/actions";
 
 interface BeforeInstallPromptEvent extends Event {
   readonly platforms: Array<string>;
@@ -17,10 +18,12 @@ const Install = () => {
   const router = useRouter();
   const [installPrompt, setInstallPrompt] = useState<Event | null>(null);
 
-  window.addEventListener("beforeinstallprompt", (e) => {
-    e.preventDefault();
-    setInstallPrompt(e);
-  });
+  if (typeof window !== "undefined") {
+    window.addEventListener("beforeinstallprompt", (e) => {
+      e.preventDefault();
+      setInstallPrompt(e);
+    });
+  }
 
   // useEffect(() => {
   //   const handleBeforeInstallPrompt = (event: Event) => {
@@ -49,7 +52,7 @@ const Install = () => {
       promptEvent.userChoice.then(({ outcome }) => {
         if (outcome === "accepted") {
           console.log("User accepted the install prompt");
-          localStorage.setItem("pwaInstalled", "1");
+          addCookies();
           router.push("/");
         } else {
           console.log("User dismissed the install prompt");

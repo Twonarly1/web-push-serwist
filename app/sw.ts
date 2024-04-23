@@ -1,7 +1,12 @@
 import { defaultCache } from "@serwist/next/worker";
 import { Serwist } from "serwist";
-
 import type { PrecacheEntry, SerwistGlobalConfig } from "serwist";
+
+interface NotificationAction {
+  action: string;
+  icon?: string;
+  title: string;
+}
 
 // This declares the value of `injectionPoint` to TypeScript.
 // `injectionPoint` is the string that will be replaced by the
@@ -58,7 +63,8 @@ const showLocalNotification = (
   badge: string,
   image: string,
   data: any,
-  swRegistration: ServiceWorkerRegistration
+  // type ServiceWorkerRegistration
+  swRegistration: any
 ) => {
   swRegistration.showNotification(title, {
     body,

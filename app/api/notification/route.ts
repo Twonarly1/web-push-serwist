@@ -3,7 +3,7 @@ import {
   halfHourPayload,
   quarterHourPayload,
   eventConfirmationPayload,
-} from "@/lib/payloads";
+} from "../../payloads";
 import { NextRequest, NextResponse } from "next/server";
 import webPush from "web-push";
 
@@ -33,24 +33,7 @@ export const POST = async (req: NextRequest) => {
 
   console.log("Received subscription:", subscription);
 
-  webPush.sendNotification(subscription, eventConfirmationPayload);
+  webPush.sendNotification(subscription, hourPayload);
 
   return NextResponse.json({ message: "success" });
 };
-
-// interface NotificationOptions {
-//   actions?: NotificationAction[];
-//   badge?: string;
-//   body?: string;
-//   data?: any;
-//   dir?: NotificationDirection;
-//   icon?: string;
-//   image?: string;
-//   lang?: string;
-//   renotify?: boolean;
-//   requireInteraction?: boolean;
-//   silent?: boolean | null;
-//   tag?: string;
-//   timestamp?: EpochTimeStamp;
-//   vibrate?: VibratePattern;
-// }

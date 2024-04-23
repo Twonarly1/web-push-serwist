@@ -11,6 +11,8 @@ const Notification = () => {
     })
   );
 
+  const badge = navigator.setAppBadge();
+
   const sendNotificationButtonOnClick: MouseEventHandler<
     HTMLButtonElement
   > = async (event) => {
@@ -22,7 +24,7 @@ const Notification = () => {
     }
 
     try {
-      await fetch("http://localhost:3000/api/notification", {
+      await fetch("https://web-push-serwist.vercel.app/api/notification", {
         method: "POST",
         headers: {
           "Content-type": "application/json",

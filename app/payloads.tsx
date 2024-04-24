@@ -50,7 +50,7 @@ const actions = [
 const hourNoticationOptions: NotificationOptions = {
   body: "Your appointment is coming up in 1 hour!",
   icon: "/icons/timer-60_192.png",
-  badge: "/icons/badge.png",
+  badge: "/icons/mono.png",
   data,
   actions,
   // tag: "hour",

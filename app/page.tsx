@@ -59,12 +59,13 @@ const HomePage = () => {
           y="-37.499999"
           height="449.999989"
           fill-opacity="1"
+          fill="transparent"
         />
         <rect
           x="-37.5"
           width="450"
           // fill="hsl(259,38%,29%)"
-          fill="#fff"
+          fill="#000000"
           y="-37.499999"
           height="449.999989"
           fill-opacity="1"

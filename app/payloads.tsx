@@ -42,15 +42,15 @@ const actions = [
     title: "Dismiss",
   },
 ];
+
 // badge --> Chrome/Android only: 72x72 PNG
-const badge = "/icons/maskable-icon-72.png";
 // icon --> Android and Desktop only: 192x192 PNG
 // image --> Android and Windows only: aspect ratio 2:1, 1440x720, maxWidth: 2000, minWidth: 300: JPG
 
 const hourNoticationOptions: NotificationOptions = {
   body: "Your appointment is coming up in 1 hour!",
   icon: "/icons/timer-60_192.png",
-  badge,
+  badge: "/icons/maskable-icon-72.png",
   data,
   actions,
   // tag: "hour",
@@ -59,7 +59,7 @@ const hourNoticationOptions: NotificationOptions = {
 const halfHourNoticationOptions: NotificationOptions = {
   body: "Your appointment is coming up in 30 minutes!",
   icon: "/icons/timer-30_192.png",
-  badge,
+  badge: "/icons/maskable-icon-72.png",
   data,
   actions,
   // tag: "half-hour",
@@ -68,7 +68,7 @@ const halfHourNoticationOptions: NotificationOptions = {
 const quarterHourNoticationOptions: NotificationOptions = {
   body: "Your appointment is coming up in 15 minutes!",
   icon: "/icons/timer-15_192.png",
-  badge,
+  badge: "/icons/maskable-icon-72.png",
   data,
   actions,
   // tag: "quarter-hour",
@@ -76,7 +76,7 @@ const quarterHourNoticationOptions: NotificationOptions = {
 
 const eventConfirmationOptions: NotificationOptions = {
   body: "Complete your appointment?",
-  badge,
+  badge: "/icons/maskable-icon-72.png",
   data: {
     options: [
       {
